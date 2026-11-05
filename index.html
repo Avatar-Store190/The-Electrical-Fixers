@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Electrical Fixers | Kuils River</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+:root{--navy:#0A1A3A;--yellow:#FFC107;--orange:#FF8C00;--light:#F6F7FB;--dark:#111827}
+body{background:#fff;color:var(--dark);line-height:1.6}
+a{text-decoration:none}
+.topbar{background:var(--navy);color:#fff;padding:8px 16px;text-align:center;font-size:14px}
+.topbar b{color:var(--yellow)}
+header{position:sticky;top:0;background:#fff;display:flex;justify-content:space-between;align-items:center;padding:10px 14px;box-shadow:0 2px 10px rgba(0,0,0,.08);z-index:10}
+.logo-box{display:flex;align-items:center;gap:8px}
+.logo-box img{height:52px;width:auto;border-radius:8px;display:block;max-width:190px;object-fit:contain;background:#fff}
+.logo-demo{width:52px;height:52px;background:var(--navy);color:var(--yellow);display:grid;place-items:center;font-size:20px;font-weight:900;border-radius:10px;border:2px solid var(--yellow)}
+.logo-text{line-height:1}.logo-text b{color:var(--navy);font-size:15px}.logo-text span{color:var(--orange);font-size:10px;letter-spacing:1px}
+.btn{background:var(--orange);color:#fff;padding:12px 18px;border-radius:999px;font-weight:800;display:inline-block;border:none;cursor:pointer}
+.btn-navy{background:var(--navy)} .btn-green{background:#25D366} .btn-grey{background:#E5E7EB;color:#111}
+.hero{background:linear-gradient(180deg,#0A1A3A 0%,#1A3A7A 100%);color:#fff;padding:28px 16px 32px;text-align:center}
+.hero-logo{background:#fff;padding:12px 16px;border-radius:14px;display:inline-block;min-width:180px}
+.hero-logo img{max-height:72px;max-width:260px;width:auto;display:block;margin:0 auto}
+.hero .badge{background:#fff;color:var(--navy);display:inline-block;padding:6px 12px;border-radius:999px;font-size:13px;font-weight:800;margin-top:14px}
+.hero h2{font-size:32px;line-height:1.1;margin:14px 0 10px}.hero h2 span{color:var(--yellow)}
+.hero p{opacity:.9;max-width:520px;margin:0 auto 18px}
+.hero-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.trust{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:18px;font-size:13px}
+.trust div{background:rgba(255,255,255,.12);padding:8px 12px;border-radius:999px}
+.section{padding:28px 16px;max-width:720px;margin:0 auto}
+.section h3{font-size:24px;color:var(--navy);margin-bottom:6px}.section p.sub{color:#6B7280;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:var(--light);padding:16px;border-radius:14px;border:1px solid #E5E7EB}
+.card h4{color:var(--navy);margin-bottom:4px}.card p{font-size:14px;color:#4B5563}
+.price-tag{font-weight:900;color:var(--orange);font-size:18px;margin-top:8px}
+.price{background:#FFF7ED;border:1px solid #FED7AA;padding:12px;border-radius:10px;margin-top:12px;font-size:14px}
+.review{background:#fff;border:1px solid #E5E7EB;border-radius:14px;padding:16px;margin-bottom:12px}
+.stars{color:#F59E0B;font-size:18px}
+input,select,textarea{width:100%;padding:13px;border-radius:10px;border:1px solid #D1D5DB;margin:6px 0 10px;font-size:15px}
+label{font-size:13px;font-weight:700}
+.areas{display:flex;flex-wrap:wrap;gap:8px}.areas span{background:#FEF3C7;padding:6px 10px;border-radius:999px;font-size:13px;font-weight:600;color:var(--navy)}
+footer{background:#0B1220;color:#fff;padding:24px 16px;text-align:center;font-size:14px}footer a{color:var(--yellow)}
+.float{position:fixed;bottom:16px;right:16px;background:#25D366;color:#fff;width:60px;height:60px;border-radius:50%;display:grid;place-items:center;font-size:28px;box-shadow:0 6px 18px rgba(0,0,0,.25);z-index:20}
+.admin-box{background:#fff;border:2px solid var(--navy);border-radius:18px;padding:20px;margin:16px auto;max-width:720px}
+.admin-card{background:#F6F7FB;border:1px solid #E5E7EB;border-radius:12px;padding:12px;margin-bottom:10px}
+.small{font-size:12px;color:#6B7280}
+.team-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.team-card{background:#fff;border:1px solid #E5E7EB;border-radius:14px;padding:14px;text-align:center}
+.team-card img{width:90px;height:90px;object-fit:cover;border-radius:50%;border:3px solid var(--yellow);background:#E5E7EB}
+.team-avatar{width:90px;height:90px;border-radius:50%;background:var(--navy);color:var(--yellow);display:grid;place-items:center;font-size:32px;font-weight:900;margin:0 auto;border:3px solid var(--yellow)}
+.upload-preview{width:100%;max-height:140px;object-fit:contain;background:#fff;border:1px dashed #ccc;border-radius:10px;margin:6px 0}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.team-grid{grid-template-columns:1fr 1fr}.hero h2{font-size:28px}}
+</style>
+</head>
+<body>
+
+<!-- PUBLIC SITE -->
+<div id="site">
+<div class="topbar">⭐ 5.0 Rated on Google • <b>Electrical Installation Service</b> • Kuils River</div>
+<header>
+  <div class="logo-box" id="headerLogo"></div>
+  <a class="btn" href="#quote">Get Quote</a>
+</header>
+
+<section class="hero">
+  <div class="hero-logo" id="heroLogo"></div><br>
+  <span class="badge">🔧 THE ELECTRICAL FIXERS • Kuils River</span>
+  <h2>Need It Fixed Right?<br><span>Up To Code, First Time.</span></h2>
+  <p>The Electrical Fixers. Eric and his team. Electrical installations done properly, up to code, trusted again and again. Open 24 hours.</p>
+  <div class="hero-btns">
+    <a class="btn" id="heroWhatsApp" href="#" target="_blank">📱 WhatsApp Us Now</a>
+    <a class="btn btn-navy" id="heroCall" href="#" style="border:1px solid #fff">📞 Call Now</a>
+  </div>
+  <div class="trust"><div>✅ 5.0 ★ (3 Reviews)</div><div>🔧 Installation Specialist</div><div>🕐 Open 24 Hours</div></div>
+</section>
+
+<section class="section">
+  <h3>Our Services & Prices</h3>
+  <p class="sub">Tap WhatsApp to book. Prices are set by the owner.</p>
+  <div class="grid" id="servicesGrid"></div>
+  <div class="price"><b>Special:</b> <span id="specialText"></span></div>
+</section>
+
+<section class="section" style="background:#F6F7FB;border-radius:18px">
+  <h3>Meet The Team</h3>
+  <p class="sub">The team behind The Electrical Fixers. Real people, real work.</p>
+  <div class="team-grid" id="teamGrid"></div>
+</section>
+
+<section class="section">
+  <h3>Why Customers Trust The Electrical Fixers</h3>
+  <div class="review"><div class="stars">★★★★★</div><p><b>"I've had several electrical installations done at my place, and always trust Eric to ensure it's up to code."</b></p><p style="font-size:13px;color:#6B7280">— Shane • Google Review • 2 years ago</p></div>
+  <div class="review"><div class="stars">★★★★★</div><p><b>5-star Google Review from a happy customer in Kuils River.</b></p><p style="font-size:13px;color:#6B7280">— Nontle Nangu • Google Review • 1 year ago</p></div>
+  <div class="review"><div class="stars">★★★★★</div><p><b>5-star Google Review from a happy customer in Kuils River.</b></p><p style="font-size:13px;color:#6B7280">— Emmanuel Moloko • Google Review • 3 years ago</p></div>
+  <p style="font-size:13px;color:#666;margin-top:8px">Perfect 5.0 rating — every single review is 5 stars.</p>
+</section>
+
+<section class="section" id="quote">
+  <form onsubmit="sendWhatsApp(event)" style="background:var(--navy);color:#fff;padding:20px;border-radius:18px">
+    <h3 style="color:#fff">Get a FREE Online Estimate</h3>
+    <p style="font-size:14px;opacity:.9;margin-bottom:12px">Fill this in 30 seconds. It goes straight to Eric on WhatsApp.</p>
+    <label>Your Name</label><input id="name" required>
+    <label>Your Area</label><select id="area"><option>Kuils River</option><option>Blue Downs</option><option>Belhar</option><option>Delft</option><option>Sunbird Park</option><option>Other Cape Town</option></select>
+    <label>What Do You Need?</label><select id="serviceSelect"></select>
+    <label>Describe The Problem</label><textarea id="msg" rows="3"></textarea>
+    <button class="btn" style="width:100%;font-size:16px" type="submit">Send On WhatsApp →</button>
+  </form>
+</section>
+
+<section class="section">
+  <h3>Areas We Serve</h3>
+  <div class="areas"><span>Kuils River</span><span>Blue Downs</span><span>Belhar</span><span>Delft</span><span>Sunbird Park</span><span>Cape Town</span></div>
+  <p style="margin-top:14px;font-size:14px"><b>Address:</b> 35 Wagtail, Kuils River, Cape Town, 7580<br><b>Plus Code:</b> 2MPG+PF Blue Downs, Cape Town<br><b>Phone:</b> 073 556 5082<br><b>Hours:</b> Open 24 Hours</p>
+  <a class="btn btn-navy" href="https://www.google.com/maps/search/?api=1&query=35+Wagtail+Kuils+River+Cape+Town+7580" target="_blank">📍 Get Directions</a>
+</section>
+
+<footer>
+  <h3 style="color:#fff">THE ELECTRICAL FIXERS</h3>
+  <p>Electrical Installation Service • Online Estimates • On-Site Services</p>
+  <p style="margin-top:10px">📍 35 Wagtail, Kuils River, 7580<br>⭐ 5.0 on Google (3 Reviews) • 📞 073 556 5082</p>
+  <p style="margin-top:10px"><a id="footerWhatsApp" href="#">WhatsApp Us</a> • <a id="footerCall" href="#">Call Us</a> • <a href="#admin" onclick="showAdmin()">Owner Login</a></p>
+  <p style="opacity:.6;margin-top:12px;font-size:12px">Website built by Avatar Web Store • © 2026 The Electrical Fixers</p>
+</footer>
+<a class="float" id="floatWhatsApp" href="#" target="_blank">💬</a>
+</div>
+
+<!-- OWNER ADMIN - CLEAN LOGIN, NO TEXT INSIDE BOXES -->
+<div id="admin" style="display:none;background:#EEF2FF;min-height:100vh;padding:16px">
+  <div class="admin-box">
+    <h2 style="color:var(--navy)">🔐 Owner Dashboard</h2>
+    <p class="small">The Electrical Fixers</p>
+    <div id="loginBox" style="margin-top:16px">
+      <label>Your Phone Number</label>
+      <input id="loginPhone" inputmode="numeric">
+      <label>Password</label>
+      <input id="loginPass" type="password" inputmode="numeric">
+      <button class="btn" style="width:100%" onclick="doLogin()">Login</button>
+      <p id="loginError" style="color:red;font-weight:700"></p>
+    </div>
+
+    <div id="dashBox" style="display:none;margin-top:16px">
+      <p><b>Welcome, Owner ✅</b> <span id="showPhone"></span></p>
+      <button class="btn btn-grey" onclick="doLogout()">Log Out</button>
+      <button class="btn btn-navy" onclick="document.getElementById('passBox').style.display='block'">Change Password</button>
+
+      <div id="passBox" style="display:none;margin-top:12px;background:#FFF7ED;padding:14px;border-radius:12px">
+        <h4>Change Password - Numbers Only</h4>
+        <label>Old Password</label><input id="oldPass" inputmode="numeric">
+        <label>New Password</label><input id="newPass" inputmode="numeric">
+        <label>Repeat New Password</label><input id="newPass2" inputmode="numeric">
+        <button class="btn" onclick="changePassword()">Save New Password</button>
+        <p id="passMsg" style="font-weight:700"></p>
+      </div>
+
+      <h3 style="margin-top:20px">1. Company Logo</h3>
+      <p class="small">Demo logo is there now. Upload your real logo here.</p>
+      <div id="currentLogoPreview"></div>
+      <label>Choose Logo Photo</label>
+      <input type="file" id="logoFile" accept="image/*" onchange="uploadLogo(event)">
+      <button class="btn btn-grey" onclick="removeLogo()">Remove Logo - Use Demo Logo</button>
+
+      <h3 style="margin-top:20px">2. Your Phone / WhatsApp Number</h3>
+      <input id="editPhone">
+
+      <h3>3. Special Offer</h3>
+      <input id="editSpecial">
+
+      <h3>4. Services & Prices</h3>
+      <p class="small">Owner can add, edit price, delete.</p>
+      <div id="editServices"></div>
+      <button class="btn btn-green" onclick="addService()">+ Add Service</button>
+
+      <h3 style="margin-top:20px">5. Your Team</h3>
+      <p class="small">Add your team. Add photo, name, job.</p>
+      <div id="editTeam"></div>
+      <button class="btn btn-green" onclick="addBrother()">+ Add Team Member</button>
+
+      <br><br>
+      <button class="btn" style="width:100%;font-size:17px" onclick="saveAll()">💾 SAVE ALL CHANGES</button>
+      <p id="saveMsg" style="color:green;font-weight:800;margin-top:8px"></p>
+      <button class="btn btn-grey" style="width:100%;margin-top:10px" onclick="showSite()">← Back To Website</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const OWNER_PHONE = "27735565082";
+const DEFAULT_SERVICES = [
+  {name:"🔧 Electrical Installation", desc:"New installations done properly, up to code, trusted again and again.", price:"From R350"},
+  {name:"⚡ Fault Finding & Repairs", desc:"Tripping, no power, sparking, lights not working - we fix it.", price:"From R350"},
+  {name:"💡 Plugs, Switches & Lights", desc:"New plugs, switches, lights, DB boards.", price:"From R300"},
+  {name:"🏠 On-Site Services", desc:"We come to you in Kuils River, Blue Downs, Belhar.", price:"Free Quote"},
+  {name:"🧾 Online Estimates", desc:"Send photos on WhatsApp, get free estimate before we come.", price:"FREE"},
+  {name:"🛠️ Maintenance", desc:"Ongoing maintenance for houses, flats, shops.", price:"From R450"}
+];
+const DEFAULT_TEAM = [
+  {name:"Eric", role:"Owner & Head Electrician", phone:"", photo:""},
+  {name:"Team Member 2", role:"Electrician", phone:"", photo:""},
+  {name:"Team Member 3", role:"Assistant", phone:"", photo:""}
+];
+function getData(){
+  let d = JSON.parse(localStorage.getItem('fixers_v1')||'null');
+  if(!d){ d={phone:OWNER_PHONE, services:DEFAULT_SERVICES, team:DEFAULT_TEAM, special:"Free Online Estimate This Week • No Call-Out Fee for Kuils River.", password:OWNER_PHONE.replace('27','0'), logo:""}; localStorage.setItem('fixers_v1', JSON.stringify(d)); }
+  return d;
+}
+function saveData(d){ localStorage.setItem('fixers_v1', JSON.stringify(d)); }
+function logoHTML(big){
+  let d=getData();
+  if(d.logo){ return `<img src="${d.logo}" alt="Logo" style="${big?'max-height:72px;max-width:260px':'height:52px;max-width:190px'}">`; }
+  return big ? `<div style="font-size:24px;font-weight:900;color:var(--navy)">THE ELECTRICAL<br><span style="font-size:16px;color:var(--orange)">🔧 FIXERS</span><br><span style="font-size:10px;color:#666">KUILS RIVER • CAPE TOWN</span></div>` : `<div style="display:flex;align-items:center;gap:8px"><div class="logo-demo">🔧</div><div class="logo-text"><b>THE ELECTRICAL</b><br><span>FIXERS</span></div></div>`;
+}
+function renderSite(){
+  let d=getData();
+  let wa="https://wa.me/"+d.phone+"?text="+encodeURIComponent("Hi The Electrical Fixers, I need an electrician in Kuils River");
+  document.getElementById('headerLogo').innerHTML=logoHTML(false);
+  document.getElementById('heroLogo').innerHTML=logoHTML(true);
+  document.getElementById('heroWhatsApp').href=wa;
+  document.getElementById('footerWhatsApp').href=wa;
+  document.getElementById('floatWhatsApp').href=wa;
+  document.getElementById('heroCall').href="tel:+"+d.phone;
+  document.getElementById('footerCall').href="tel:+"+d.phone;
+  document.getElementById('specialText').textContent=d.special;
+  let grid=document.getElementById('servicesGrid'); let sel=document.getElementById('serviceSelect');
+  grid.innerHTML=""; sel.innerHTML="";
+  d.services.forEach(s=>{ grid.innerHTML+=`<div class="card"><h4>${s.name}</h4><p>${s.desc}</p><div class="price-tag">${s.price}</div><a class="btn" style="margin-top:10px;padding:8px 14px;font-size:13px" href="${wa}" target="_blank">Book This →</a></div>`; sel.innerHTML+=`<option>${s.name} - ${s.price}</option>`; });
+  let tg=document.getElementById('teamGrid'); tg.innerHTML="";
+  d.team.forEach(m=>{
+    let img = m.photo ? `<img src="${m.photo}">` : `<div class="team-avatar">${m.name.charAt(0)}</div>`;
+    let btn = m.phone ? `<a href="https://wa.me/${m.phone}" target="_blank" style="display:inline-block;margin-top:8px;background:#25D366;color:#fff;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:700">WhatsApp</a>` : `<span style="font-size:12px;color:#999">No WhatsApp yet</span>`;
+    tg.innerHTML+=`<div class="team-card">${img}<h4 style="margin-top:8px;color:var(--navy)">${m.name}</h4><p style="font-size:13px;color:#666">${m.role}</p>${btn}</div>`;
+  });
+}
+function sendWhatsApp(e){ e.preventDefault(); let d=getData(); let text="Hi The Electrical Fixers! I'm "+document.getElementById('name').value+" from "+document.getElementById('area').value+". I need: "+document.getElementById('serviceSelect').value+". Problem: "+document.getElementById('msg').value; window.open("https://wa.me/"+d.phone+"?text="+encodeURIComponent(text),"_blank"); }
+function showAdmin(){ document.getElementById('site').style.display='none'; document.getElementById('admin').style.display='block'; window.scrollTo(0,0); if(localStorage.getItem('fixers_logged')==='yes'){ showDash(); } }
+function showSite(){ document.getElementById('admin').style.display='none'; document.getElementById('site').style.display='block'; renderSite(); }
+function doLogin(){ let d=getData(); let phone=document.getElementById('loginPhone').value.replace(/\s/g,''); let pass=document.getElementById('loginPass').value.replace(/\s/g,''); if((phone===d.phone.replace('27','0')||phone===d.phone)&&pass===d.password){ localStorage.setItem('fixers_logged','yes'); showDash(); } else { document.getElementById('loginError').textContent="Wrong number or password."; } }
+function showDash(){ let d=getData(); document.getElementById('loginBox').style.display='none'; document.getElementById('dashBox').style.display='block'; document.getElementById('showPhone').textContent=d.phone; document.getElementById('editPhone').value=d.phone; document.getElementById('editSpecial').value=d.special; document.getElementById('currentLogoPreview').innerHTML = d.logo ? `<img src="${d.logo}" class="upload-preview">` : `<p class="small">Currently using DEMO logo. Upload yours below.</p>`; renderEditServices(); renderEditTeam(); }
+function renderEditServices(){ let d=getData(); let box=document.getElementById('editServices'); box.innerHTML=""; d.services.forEach((s,i)=>{ box.innerHTML+=`<div class="admin-card"><label>Service ${i+1} Name</label><input class="srv" data-i="${i}" data-f="name" value="${s.name}"><label>Description</label><input class="srv" data-i="${i}" data-f="desc" value="${s.desc}"><label>Price</label><input class="srv" data-i="${i}" data-f="price" value="${s.price}"><button class="btn btn-grey" onclick="deleteService(${i})">X Delete</button></div>`; }); }
+function renderEditTeam(){ let d=getData(); let box=document.getElementById('editTeam'); box.innerHTML=""; d.team.forEach((m,i)=>{ box.innerHTML+=`<div class="admin-card"><label>Team ${i+1} - Name</label><input class="team" data-i="${i}" data-f="name" value="${m.name}"><label>Job / Role</label><input class="team" data-i="${i}" data-f="role" value="${m.role}"><label>His WhatsApp (with 27)</label><input class="team" data-i="${i}" data-f="phone" value="${m.phone}"><label>His Photo</label>${m.photo?`<img src="${m.photo}" class="upload-preview">`:``}<input type="file" accept="image/*" onchange="uploadBrotherPhoto(event,${i})"><button class="btn btn-grey" onclick="deleteBrother(${i})">X Remove</button></div>`; }); }
+function addService(){ let d=getData(); d.services.push({name:"⚡ New Service",desc:"Describe it",price:"From R0"}); saveData(d); renderEditServices(); }
+function deleteService(i){ if(!confirm("Delete this service?")) return; let d=getData(); d.services.splice(i,1); saveData(d); renderEditServices(); }
+function addBrother(){ let d=getData(); d.team.push({name:"New Member",role:"Electrician",phone:"",photo:""}); saveData(d); renderEditTeam(); }
+function deleteBrother(i){ if(!confirm("Remove this member?")) return; let d=getData(); d.team.splice(i,1); saveData(d); renderEditTeam(); }
+function uploadLogo(e){ let f=e.target.files[0]; if(!f) return; let r=new FileReader(); r.onload=function(){ let d=getData(); d.logo=r.result; saveData(d); document.getElementById('currentLogoPreview').innerHTML=`<img src="${d.logo}" class="upload-preview">`; renderSite(); alert("Logo uploaded! Go back to website to see it."); }; r.readAsDataURL(f); }
+function removeLogo(){ let d=getData(); d.logo=""; saveData(d); document.getElementById('currentLogoPreview').innerHTML=`<p class="small">Demo logo restored.</p>`; renderSite(); }
+function uploadBrotherPhoto(e,i){ let f=e.target.files[0]; if(!f) return; let r=new FileReader(); r.onload=function(){ let d=getData(); d.team[i].photo=r.result; saveData(d); renderEditTeam(); renderSite(); }; r.readAsDataURL(f); }
+function saveAll(){ let d=getData(); d.phone=document.getElementById('editPhone').value.replace(/\s/g,'').replace(/^\+/,''); d.special=document.getElementById('editSpecial').value; let srvInputs=document.querySelectorAll('.srv'); let ns=[]; for(let k=0;k<srvInputs.length;k+=3){ ns.push({name:srvInputs[k].value,desc:srvInputs[k+1].value,price:srvInputs[k+2].value}); } d.services=ns; let teamInputs=document.querySelectorAll('.team'); let nt=[]; for(let k=0;k<teamInputs.length;k+=3){ let idx=k/3; nt.push({name:teamInputs[k].value,role:teamInputs[k+1].value,phone:teamInputs[k+2].value,photo:d.team[idx]?d.team[idx].photo:""}); } d.team=nt; saveData(d); document.getElementById('saveMsg').textContent="Saved! Website updated."; renderSite(); }
+function changePassword(){ let d=getData(); let o=document.getElementById('oldPass').value.trim(); let n=document.getElementById('newPass').value.trim(); let n2=document.getElementById('newPass2').value.trim(); if(o!==d.password){ document.getElementById('passMsg').style.color='red'; document.getElementById('passMsg').textContent="Old password wrong."; return; } if(!/^[0-9]+$/.test(n)){ document.getElementById('passMsg').style.color='red'; document.getElementById('passMsg').textContent="Numbers only."; return; } if(n!==n2){ document.getElementById('passMsg').style.color='red'; document.getElementById('passMsg').textContent="Passwords do not match."; return; } d.password=n; saveData(d); document.getElementById('passMsg').style.color='green'; document.getElementById('passMsg').textContent="Password changed!"; }
+function doLogout(){ localStorage.removeItem('fixers_logged'); location.reload(); }
+if(location.hash==="#admin"){ showAdmin(); }
+renderSite();
+</script>
+</body>
+</html>
